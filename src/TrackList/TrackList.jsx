@@ -1,15 +1,15 @@
 import React from 'react';
 import Track from '../Track/Track';
 
-function TrackList(props) {
+function Tracklist(props) {
     return (
         <>
-            {props.trackList.map((e) => (<div key={e.id}>
+            {props.tracklist.map((e) => (<div key={e.id}>
                                             <Track track={e}/>
-                                            <button>Add</button>
+                                            <button onClick={() => props.buttonAction(e)}>{props.buttonValue}</button>
                                         </div>))}
         </>
     );
 };
 
-export default TrackList;
+export default Tracklist;
