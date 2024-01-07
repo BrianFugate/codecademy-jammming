@@ -1,32 +1,27 @@
 import { useState } from 'react';
-import './App.css';
+import styles from './App.module.css';
 import SearchBar from './SearchBar/SearchBar';
 import SearchResults from './SearchResults/SearchResults';
+import Playlist from './Playlist/Playlist';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
 
   function getSearchResults(txt) {
-    setSearchResults([{id: 0, artist: 'Metallica', song: 'One'}, {id: 1, artist: 'Pearl Jam', song: 'Jeremy'}]);
+    setSearchResults([{id: 0, artist: 'Metallica', album: '...And Justice For All', song: 'One'}, 
+                      {id: 1, artist: 'Pearl Jam', album: 'Ten', song: 'Jeremy'},
+                      {id: 2, artist: 'Red Hot Chili Peppers', album: 'Blood Sugar Sex Magik', song: 'Suck My Kiss'}]);
   };
 
   return (
     <>
-      
-      <h1>Jammming</h1>
-      <SearchBar getSearchResults={getSearchResults}/>
-      <SearchResults searchResults={searchResults} setPlaylist={setPlaylist} playlist={playlist}/>
-      <p>Playlist</p>
-      <p>{JSON.stringify(playlist)}</p>
-      <div className="card">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <h1 className={styles.h1}>Ja<span>mmm</span>ing: Spotify Playlist Creator</h1>
+      <div className={styles.body}>
+        <SearchBar getSearchResults={getSearchResults}/>
+        <SearchResults searchResults={searchResults} playlist={playlist} setPlaylist={setPlaylist}/>
+        <Playlist playlist={playlist} setPlaylist={setPlaylist}/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more, dummy
-      </p>
     </>
   );
 };

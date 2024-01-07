@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Tracklist from '../Tracklist/Tracklist';
+import styles from './SearchResults.module.css';
 
 function SearchResults(props) {
     function buttonClick(e) {
@@ -10,7 +11,8 @@ function SearchResults(props) {
     
     return (
         <>
-            <div>Results
+            <div className={styles.searchResults}>
+                <h2>Results</h2>
                 <Tracklist tracklist={props.searchResults} buttonValue='Add' buttonAction={buttonClick}/>
             </div>
         </>

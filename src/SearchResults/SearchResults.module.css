@@ -1,0 +1,11 @@
+.searchResults {
+    flex-basis: 40%;
+    background-color: #ff8a42aa;
+    margin: 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .searchResults {
+        flex-basis: 100%;
+    }
+}

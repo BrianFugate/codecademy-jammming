@@ -1,0 +1,9 @@
+.playlist {
+    flex-basis: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .playlist {
+        flex-basis: 100%;
+    }
+}
