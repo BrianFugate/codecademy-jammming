@@ -1,7 +1,28 @@
+@font-face {
+    font-family: 'Spicy Rice';
+    font-weight: 400;
+    src: local('Spicy Rice'), url(../fonts/SpicyRice-Regular.ttf) format('truetype');
+}
+
 .searchResults {
     flex-basis: 40%;
-    background-color: #ff8a42aa;
+    background-color: #ffd70766;
+    border: medium solid black;
+    border-radius: 8px;
     margin: 2em;
+    min-height: 40em;
+}
+
+.h2 {
+    display: block;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-family: 'Spicy Rice';
+    font-size: 2em;
+    color: #191414;
 }
 
 @media screen and (max-width: 768px) {

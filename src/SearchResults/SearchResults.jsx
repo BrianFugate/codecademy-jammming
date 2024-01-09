@@ -12,7 +12,7 @@ function SearchResults(props) {
     return (
         <>
             <div className={styles.searchResults}>
-                <h2>Results</h2>
+                <h2 className={styles.h2}>Results</h2>
                 <Tracklist tracklist={props.searchResults} buttonValue='Add' buttonAction={buttonClick}/>
             </div>
         </>

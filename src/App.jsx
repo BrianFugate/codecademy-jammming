@@ -3,24 +3,38 @@ import styles from './App.module.css';
 import SearchBar from './SearchBar/SearchBar';
 import SearchResults from './SearchResults/SearchResults';
 import Playlist from './Playlist/Playlist';
+import spotifyLogo from './images/Spotify_Logo_RGB_Black.png';
+import fetchSearchResults from './SpotifyAPICalls/fetchSearchResults';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
+  const [playlistName, setPlaylistName] = useState('Jammming Playlist');
 
-  function getSearchResults(txt) {
-    setSearchResults([{id: 0, artist: 'Metallica', album: '...And Justice For All', song: 'One'}, 
-                      {id: 1, artist: 'Pearl Jam', album: 'Ten', song: 'Jeremy'},
-                      {id: 2, artist: 'Red Hot Chili Peppers', album: 'Blood Sugar Sex Magik', song: 'Suck My Kiss'}]);
+  async function getSearchResults(searchText, category) {
+    if (searchText === '') {
+      setSearchResults([]);
+    } else {
+      const results = await fetchSearchResults(searchText, category);
+      setSearchResults(results);
+    };
   };
+
+  function saveToSpotify(e) {
+    e.preventDefault();
+    alert(playlistName + JSON.stringify(playlist));
+  }; 
 
   return (
     <>
-      <h1 className={styles.h1}>Ja<span>mmm</span>ing: Spotify Playlist Creator</h1>
+      <div className={styles.heading}>
+        <h1 className={styles.h1}>Ja<span>mmm</span>ing: Playlist Creator for </h1>
+        <img src={spotifyLogo} className={styles.logo} alt='Spotify logo'/>
+      </div>
       <div className={styles.body}>
         <SearchBar getSearchResults={getSearchResults}/>
         <SearchResults searchResults={searchResults} playlist={playlist} setPlaylist={setPlaylist}/>
-        <Playlist playlist={playlist} setPlaylist={setPlaylist}/>
+        <Playlist playlist={playlist} setPlaylist={setPlaylist} playlistName={playlistName} setPlaylistName={setPlaylistName} saveToSpotify={saveToSpotify}/>
       </div>
     </>
   );

@@ -1,0 +1,29 @@
+.track {
+    margin-left: 0.5em;
+}
+
+.song {
+    display: block;
+    margin-block-start: .1em;
+    margin-block-end: .1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: left;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.album {
+    display: block;
+    margin-block-start: .1em;
+    margin-block-end: .1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: left;
+    color: black;
+}
+
+.icon {
+    vertical-align: middle;
+}

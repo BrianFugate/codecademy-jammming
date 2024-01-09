@@ -1,6 +1,51 @@
-.playlist {
-    flex-basis: 50%;
+@font-face {
+    font-family: 'Spicy Rice';
+    font-weight: 400;
+    src: local('Spicy Rice'), url(../fonts/SpicyRice-Regular.ttf) format('truetype');
 }
+
+.playlist {
+    flex-basis: 40%;
+    background-color: #ffd70766;
+    border: medium solid black;
+    border-radius: 8px;
+    margin: 2em;
+    min-height: 40em;
+}
+
+.playlistName {
+    display: block;
+    margin: 0.1em auto;
+    font-weight: bold;
+    font-family: 'Spicy Rice';
+    font-size: 2em;
+    background-color: #ffd707CC;
+    color: #191414;
+    text-align: center;
+    width: 90%;
+}
+
+.button {
+    border-radius: 8px;
+    border: medium solid black;
+    padding: 0.4em 1.2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: #ffd707CC;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    width: 200px;
+    margin-top: 0.5em;
+  }
+  .button:hover {
+    border-color: #646cff;
+    color:#646cff;
+  }
+  .button:active {
+    border-color: white;
+    color: white;
+  }
 
 @media screen and (max-width: 768px) {
     .playlist {

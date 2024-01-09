@@ -4,15 +4,21 @@
   src: local('Spicy Rice'), url(./fonts/SpicyRice-Regular.ttf) format('truetype');
 }
 
-.h1 {
-  color: black;
-  font-family: 'Spicy Rice';
+.heading {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   background-color: #ffd70766;
+}
+
+.h1 {
+  color: #191414;
+  font-family: 'Spicy Rice';  
   font-size: 3.2em;
   line-height: 1.1;
   margin: 0;
   padding: 0.1em;
-  width: 100%;
   text-align: center;
 }
 
@@ -20,8 +26,13 @@
   color: #040a5c;
 }
 
+.logo {
+  height: 4.5em;
+  margin: 1em 2em;
+}
+
 .body {
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 1rem;
   text-align: center;

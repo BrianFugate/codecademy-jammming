@@ -1,6 +1,5 @@
 import React from 'react';
 import Tracklist from '../Tracklist/Tracklist';
-import SaveToSpotifyButton from '../SaveToSpotifyButton/SaveToSpotifyButton';
 import styles from './Playlist.module.css';
 
 function Playlist(props) {
@@ -8,17 +7,13 @@ function Playlist(props) {
         props.setPlaylist((prev) => prev.filter(element => element !== e));     
     };
 
-    function saveToSpotify() {
-        alert(JSON.stringify(props.playlist));
-    }; 
-
     return (
         <>
-            <div className={styles.playlist}>
-                <h2>Playlist</h2>
+            <form className={styles.playlist} onSubmit={props.saveToSpotify}>
+                <input className={styles.playlistName} type='text' value={props.playlistName} onChange={(e) => props.setPlaylistName(e.target.value)}/>
                 <Tracklist tracklist={props.playlist} buttonValue='Remove' buttonAction={buttonClick}/>
-                <SaveToSpotifyButton buttonAction={saveToSpotify} />
-            </div>
+                {props.playlist.length !== 0 ? <button className={styles.button} type='submit'>Save To Spotify</button> : null}
+            </form>           
         </>
     );
 };

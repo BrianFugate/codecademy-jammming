@@ -1,0 +1,23 @@
+.lineContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.1em;
+}
+
+.trackContainer {
+    display: flex;
+}
+
+.button {
+    font-size: 2.5em;
+    background-color: transparent;
+    border: none;
+}
+
+.button:hover {
+    color: #646cff;
+}
+
+.button:active {
+    color: white;
+  }

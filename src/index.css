@@ -10,8 +10,8 @@
   /* Image by Pexels from Pixabay
      https://pixabay.com/photos/audience-band-concert-crowd-1853662/
   */
-  background-position: center;
-  overflow: clip;
+  background-position: top;
+  overflow: clip scroll;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

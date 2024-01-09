@@ -3,11 +3,11 @@ import styles from './SearchBar.module.css'
 
 function SearchBar(props) {
     const [searchText, setSearchText] = useState('');
-    const [searchCategory, setSearchCategory] = useState('Track');
+    const [searchCategory, setSearchCategory] = useState('track');
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.getSearchResults(searchText);
+        props.getSearchResults(searchText, searchCategory);
     };
 
     function handleCategoryChange(category) {
@@ -19,10 +19,10 @@ function SearchBar(props) {
             <div className={styles.searchBar}>
                 <input className={styles.searchBox} name='search' type='text' value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
                 <select className={styles.dropdown} value={searchCategory} onChange={event => handleCategoryChange(event.target.value)}>
-                    <option id="0" >Track</option>
-                    <option id="1" >Artist</option>
-                    <option id="2" >Album</option>
-                    <option id="3" >Genre</option>
+                    <option id="0" >track</option>
+                    <option id="1" >artist</option>
+                    <option id="2" >album</option>
+                    <option id="3" >genre</option>
                 </select>   
             </div>
             <button className={styles.button} type='submit'>Search</button>

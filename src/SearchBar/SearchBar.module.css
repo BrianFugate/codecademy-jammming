@@ -13,7 +13,7 @@
 .searchBox {
     width: 300px;
     height: 32px;
-    margin: 16px 0;
+    margin: 48px 0 32px 0;
     background-color: #ffd707CC;
     color: black;
     font-size: 1.2em;
@@ -22,7 +22,7 @@
 .dropdown {
     width: 100px;
     height: 38px;
-    margin: 16px 0;
+    margin: 48px 0 32px 0;
     background-color: #ffd707CC;
     color: black;
     text-align: center;
@@ -37,7 +37,7 @@
 
 .button {
     border-radius: 8px;
-    border: 1px solid transparent;
+    border: medium solid black;
     padding: 0.4em 1.2em;
     font-size: 1.2em;
     font-weight: bold;
@@ -49,8 +49,9 @@
   }
   .button:hover {
     border-color: #646cff;
+    color:#646cff;
   }
-  .button:focus,
-  .button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+  .button:active {
+    border-color: white;
+    color: white;
   }
