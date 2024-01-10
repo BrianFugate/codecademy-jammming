@@ -11,6 +11,7 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
   const [playlistName, setPlaylistName] = useState('Jammming Playlist');
 
+  // Populate search results or clear them if nothing is entered
   async function getSearchResults(searchText, category) {
     if (searchText === '') {
       setSearchResults([]);
@@ -20,6 +21,7 @@ function App() {
     };
   };
 
+  // Save a playlist to a user's Spotify account
   function saveToSpotify(e) {
     e.preventDefault();
     alert(playlistName + JSON.stringify(playlist));

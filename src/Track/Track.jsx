@@ -1,11 +1,6 @@
 import React from 'react';
 import styles from './Track.module.css';
-import { FaDotCircle } from "react-icons/fa";
 import { PiDotFill } from "react-icons/pi";
-import { GoDotFill } from "react-icons/go";
-import { RxDot } from "react-icons/rx";
-
-
 
 function Track(props) {
     return (
