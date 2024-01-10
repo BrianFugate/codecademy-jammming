@@ -7,9 +7,9 @@ import spotifyLogo from './images/Spotify_Logo_RGB_Black.png';
 import fetchSearchResults from './SpotifyAPICalls/fetchSearchResults';
 
 function App() {
+  // Declaring state hooks that are used by multiple children
   const [searchResults, setSearchResults] = useState([]);
   const [playlist, setPlaylist] = useState([]);
-  const [playlistName, setPlaylistName] = useState('Jammming Playlist');
 
   // Populate search results or clear them if nothing is entered
   async function getSearchResults(searchText, category) {
@@ -21,12 +21,6 @@ function App() {
     };
   };
 
-  // Save a playlist to a user's Spotify account
-  function saveToSpotify(e) {
-    e.preventDefault();
-    alert(playlistName + JSON.stringify(playlist));
-  }; 
-
   return (
     <>
       <div className={styles.heading}>
@@ -36,7 +30,7 @@ function App() {
       <div className={styles.body}>
         <SearchBar getSearchResults={getSearchResults}/>
         <SearchResults searchResults={searchResults} playlist={playlist} setPlaylist={setPlaylist}/>
-        <Playlist playlist={playlist} setPlaylist={setPlaylist} playlistName={playlistName} setPlaylistName={setPlaylistName} saveToSpotify={saveToSpotify}/>
+        <Playlist playlist={playlist} setPlaylist={setPlaylist}/>
       </div>
     </>
   );

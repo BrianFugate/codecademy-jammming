@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tracklist from '../Tracklist/Tracklist';
 import styles from './Playlist.module.css';
 
 function Playlist(props) {
+    const [playlistName, setPlaylistName] = useState('Jammming Playlist');
+
     function buttonClick(e) {
         props.setPlaylist((prev) => prev.filter(element => element !== e));     
     };
 
+    // Save a playlist to a user's Spotify account
+    function saveToSpotify(e) {
+        e.preventDefault();
+        alert(playlistName + JSON.stringify(props.playlist));
+     }; 
+
     return (
         <>
-            <form className={styles.playlist} onSubmit={props.saveToSpotify}>
-                <input className={styles.playlistName} type='text' value={props.playlistName} onChange={(e) => props.setPlaylistName(e.target.value)}/>
+            <form className={styles.playlist} onSubmit={saveToSpotify}>
+                <input className={styles.playlistName} type='text' value={playlistName} onChange={(e) => setPlaylistName(e.target.value)}/>
                 <Tracklist tracklist={props.playlist} buttonValue='Remove' buttonAction={buttonClick}/>
                 {props.playlist.length !== 0 ? <button className={styles.button} type='submit'>Save To Spotify</button> : null}
             </form>           
