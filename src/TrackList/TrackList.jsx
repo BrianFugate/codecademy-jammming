@@ -1,5 +1,5 @@
 import React from 'react';
-import Track from '../Track/Track';
+import Track from '../Track/Track.jsx';
 import styles from './Tracklist.module.css';
 import { FaRegSquarePlus, FaRegSquareMinus } from "react-icons/fa6";
 

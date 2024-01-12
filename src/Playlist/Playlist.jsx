@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Tracklist from '../Tracklist/Tracklist';
+import Tracklist from '../Tracklist/Tracklist.jsx';
 import styles from './Playlist.module.css';
-import Spotify from '../Spotify/Spotify';
+import Spotify from '../Spotify/Spotify.js';
 
 function Playlist(props) {
     const [playlistName, setPlaylistName] = useState('Jammming Playlist');

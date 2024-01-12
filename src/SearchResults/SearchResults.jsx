@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import Tracklist from '../Tracklist/Tracklist';
+import React from 'react';
+import Tracklist from '../Tracklist/Tracklist.jsx';
 import styles from './SearchResults.module.css';
 
 function SearchResults(props) {
